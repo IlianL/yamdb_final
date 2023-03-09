@@ -12,7 +12,7 @@ services:
     image: ilian93/yamdb:latest
     restart: always
     volumes:
-    # Статика не работает и это боль, весь день просидел
+    # redoc не работает и это боль, весь день просидел
     # даже понятия не имею что сделать нужно
       - type: volume
         source: static_value
