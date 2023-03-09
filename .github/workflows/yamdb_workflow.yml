@@ -80,7 +80,7 @@ jobs:
               # Эта команда в консоли сервера работает, а тут ошибка
               # Ещё redoc не грузит, это такая боль,
               # весь день просидел и не понимаю в чём дело
-              sudo docker-compose exec web python manage.py collectstatic --no-input
+              # sudo docker-compose exec web python manage.py collectstatic --no-input
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
