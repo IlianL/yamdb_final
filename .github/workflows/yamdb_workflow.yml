@@ -76,6 +76,9 @@ jobs:
               echo DB_PORT=${{ secrets.DB_PORT }} >> .env
               sudo docker-compose up -d 
               # sudo docker-compose exec web python manage.py migrate
+              # Что-то непонятно, а как статику собирать?
+              # Эта команда не работает,  а через консоль сервера 
+              # тоже не получилось, она не реагирует, команды были с sudo
               # sudo docker-compose exec web python manage.py collectstatic --no-input
   send_message:
     runs-on: ubuntu-latest
