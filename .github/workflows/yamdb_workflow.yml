@@ -75,11 +75,11 @@ jobs:
               echo DB_HOST=${{ secrets.DB_HOST }} >> .env
               echo DB_PORT=${{ secrets.DB_PORT }} >> .env
               sudo docker-compose up -d 
-              sudo docker-compose exec web python manage.py makemigrations
-              sudo docker-compose exec web python manage.py migrate
+              # sudo docker-compose exec web python manage.py migrate
               # Что-то непонятно, а как статику автоматизировать?
-              # Эта команда не работает,  а через консоль сервера 
-              # тоже не получилось, она не реагирует, команды были с sudo
+              # Эта команда в консоли сервера работает, а тут ошибка
+              # Ещё redoc не грузит, это такая боль,
+              # весь день просидел и не понимаю в чём дело
               sudo docker-compose exec web python manage.py collectstatic --no-input
   send_message:
     runs-on: ubuntu-latest
