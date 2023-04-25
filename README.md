@@ -104,6 +104,11 @@ POSTGRES_PASSWORD=example_pwd # пароль для подключения к Б
 DB_HOST=db # название сервиса (контейнера)
 DB_PORT=5432 # порт для подключения к БД 
 ```
+Отредактируйте файл infra/nginx/default.conf.
+```
+# Замените этот адрес на адрес вашего сервера.
+server_name 127.0.0.1;
+```
 Скопируйте файлы из папки infra на ваш сервер.
 ```
 scp -r infra/*  <username>@<server IP>:/home/<server user>/yamdb/
