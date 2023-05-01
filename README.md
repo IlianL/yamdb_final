@@ -84,13 +84,13 @@ sudo apt upgrade -y
 ```
 sudo apt install docker.io
 sudo apt install docker-compose
+# Если у вас не ubuntu, воспользуйтесь этой инструкцией для установки docker-compose:
+# https://docs.docker.com/compose/install/
 ```
 Проверяем успешность установки.
 ```
 docker --version
 docker-compose --version
-# Если у вас не ubuntu, воспользуйтесь этой инструкцией для установки docker-compose:
-# https://docs.docker.com/compose/install/
 ```
 Создайте на сервере директорию для проекта.
 ```
