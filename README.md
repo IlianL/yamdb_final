@@ -98,7 +98,7 @@ mkdir yamdb && cd yamdb/
 ```
 Создайте и заполните .env файл по примеру.
 ```
-touch .env
+nano .env
 DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
 DB_NAME=postgres # имя базы данных
 POSTGRES_USER=example_login # логин для подключения к базе данных
@@ -117,12 +117,13 @@ scp -r infra/*  <username>@<server IP>:/home/<server user>/yamdb/
 ```
 Запустите контейнеры.
 ```
-# Сайт запущен и доступен по адресу:  http://[ваш сервер]/api/v1/.
 sudo docker-compose up -d
+# Сайт запущен и доступен по адресу:  http://[ваш сервер]/api/v1/.
 ```
 После успешной сборки выполнить эти команды:
 ```
 # Делаем миграции.
+sudo docker-compose exec -T web python manage.py makemigrations
 sudo docker-compose exec -T web python manage.py migrate
 # Собирем статику.
 sudo docker-compose exec -T web python manage.py collectstatic --no-input
